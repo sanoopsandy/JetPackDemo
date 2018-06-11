@@ -54,16 +54,17 @@ class BaseRecyclerAdapter : RecyclerView.Adapter<BaseRecyclerAdapter.BaseViewHol
         fun bind(ob: Any?) {
             binding.setVariable(BR.model, ob)
             binding.setVariable(BR.handler, this)
+            binding.setVariable(BR.position, adapterPosition)
             binding.executePendingBindings()
         }
 
-        fun onCustomClick(view: View) {
-            clickListener.onCustomClick(view)
+        fun onCustomClick(view: View, position: Int) {
+            clickListener.onCustomClick(view, position)
         }
     }
 
 
     interface CustomClickListener {
-        fun onCustomClick(view: View)
+        fun onCustomClick(view: View, position: Int)
     }
 }

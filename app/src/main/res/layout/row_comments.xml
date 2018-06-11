@@ -10,7 +10,7 @@
 
         <variable
             name="model"
-            type="com.example.jetpackdemo.base.model.local.UsersPost" />
+            type="com.example.jetpackdemo.base.model.local.Comment" />
 
         <variable
             name="handler"
@@ -25,8 +25,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:onClick="@{(v) -> handler.onCustomClick(v, position)}">
+        android:layout_height="100dp">
 
         <ImageView
             android:id="@+id/imgAvatar"
@@ -35,7 +34,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:imageUrl="@{@string/avatar_url(model.userName)}"
+            app:imageUrl="@{@string/avatar_url(model.name)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +46,7 @@
             android:layout_marginStart="8dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@{model.postTitle}"
+            android:text="@{model.name}"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +62,7 @@
             android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="@{model.postBody}"
+            android:text="@{model.body}"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imgAvatar"

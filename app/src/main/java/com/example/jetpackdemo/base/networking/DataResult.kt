@@ -1,7 +1,7 @@
 package com.example.jetpackdemo.base.networking
 
 /**
- * Created by karn on 18/1/18.
+ * Sealed class for handling network states
  */
 sealed class DataResult<T> {
     data class Progress<T>(var loading: Boolean) : DataResult<T>()

@@ -22,6 +22,7 @@ import retrofit2.Retrofit
 @Component(dependencies = [BaseComponent::class], modules = [ListModule::class])
 interface ListComponent {
     fun appDB(): AppDB
+    fun postService(): PostService
     fun inject(listActivity: ListActivity)
     fun inject(listActivity: ListViewModel)
 }
